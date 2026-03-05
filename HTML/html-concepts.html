@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Mastery | All Concepts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="..//style/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><i class="fas fa-laptop-code"></i> Web<span>Mastery</span></div>
+            <ul class="nav-links">
+                <li><a href="..//index.html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="html-concepts.html">HTML5 <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#structure">Document Structure</a></li>
+                        <li><a href="#text-formatting">Text Formatting</a></li>
+                        <li><a href="#lists">Lists (Ordered/Unordered)</a></li>
+                        <li><a href="#links-images">Links & Media</a></li>
+                        <li><a href="#tables">Data Tables</a></li>
+                        <li><a href="#forms">Forms & Validations</a></li>
+                        <li><a href="#semantic">Semantic Elements</a></li>
+                        <li><a href="#entities">HTML Entities & Symbols</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="..//CSS/css-concepts.html">CSS3 <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="..//css/css-concepts.html#selectors">Selectors & Specificity</a></li>
+                        <li><a href="..//css/css-concepts.html#colors">Colors & Backgrounds</a></li>
+                        <li><a href="..//css/css-concepts.html#box-model">The Box Model</a></li>
+                        <li><a href="..//css/css-concepts.html#typography">Web Typography</a></li>
+                        <li><a href="..//css/css-concepts.html#flexbox">Flexbox Layout</a></li>
+                        <li><a href="..//css/css-concepts.html#grid">CSS Grid System</a></li>
+                        <li><a href="..//css/css-concepts.html#animations">Transitions & Keyframes</a></li>
+                        <li><a href="..//css/css-concepts.html#responsive">Media Queries</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="..//contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">HTML5 Structural Mastery</h1>
+        <p class="page-desc">The essential architecture of the modern web, documented with live technical examples.</p>
+
+        <section id="structure" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-file-code"></i>
+                <h2>1. Document Architecture & Metadata</h2>
+            </div>
+            <p>A standard HTML5 document follows a strict hierarchy. The <code>&lt;head&gt;</code> contains
+                machine-readable information (metadata) like SEO titles, character sets, and viewport settings for
+                mobile responsiveness, while the <code>&lt;body&gt;</code> contains the visible content.</p>
+
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <h4>HTML Technical Code</h4>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Web Tutorial"&gt;
+    &lt;title&gt;Professional Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;Welcome to HTML5&lt;/header&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <h4>Browser Preview</h4>
+                    <div class="preview">
+                        <div style="border: 1px solid #ddd; padding: 10px; background: #f9f9f9; text-align: center;">
+                            <span style="font-size: 12px; color: #888;">[Browser Tab: Professional Page]</span>
+                            <h2 style="margin-top: 10px; color: #333;">Welcome to HTML5</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="text-formatting" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-font"></i>
+                <h2>2. Typography & Text Semantics</h2>
+            </div>
+            <p>HTML provides semantic tags to define the importance of text. Headers <code>&lt;h1&gt;</code> through
+                <code>&lt;h6&gt;</code> define the content's outline, while formatting tags like
+                <code>&lt;strong&gt;</code> and <code>&lt;mark&gt;</code> provide visual and structural emphasis.</p>
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;h1&gt;Primary Heading&lt;/h1&gt;
+&lt;h3&gt;Sub-Section Heading&lt;/h3&gt;
+&lt;p&gt;Regular text with &lt;strong&gt;Bold Emphasis&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Using &lt;mark&gt;Highlighting&lt;/mark&gt; for attention.&lt;/p&gt;
+&lt;p&gt;Chemical Formula: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;p&gt;Math Equation: X&lt;sup&gt;2&lt;/sup&gt; + Y&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview">
+                        <h1 style="font-size: 24px;">Primary Heading</h1>
+                        <h3 style="font-size: 18px;">Sub-Section Heading</h3>
+                        <p>Regular text with <strong>Bold Emphasis</strong>.</p>
+                        <p><mark>Highlighting</mark> for attention.</p>
+                        <p>Chemical Formula: H<sub>2</sub>O</p>
+                        <p>Math Equation: X<sup>2</sup> + Y<sup>2</sup></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lists" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-list-ol"></i>
+                <h2>3. Multi-level & Data Lists</h2>
+            </div>
+            <p>Lists are essential for menus and organizing data. <code>&lt;ul&gt;</code> creates bulleted lists,
+                <code>&lt;ol&gt;</code> creates numbered lists, and nested lists allow for sub-category organization.
+            </p>
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;ul&gt;
+    &lt;li&gt;Web Technologies
+        &lt;ul&gt;
+            &lt;li&gt;Frontend (HTML/CSS)&lt;/li&gt;
+            &lt;li&gt;Backend (Node.js)&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Mobile Apps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol type="A"&gt;
+    &lt;li&gt;Project Planning&lt;/li&gt;
+    &lt;li&gt;Deployment&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview">
+                        <ul style="padding-left: 20px;">
+                            <li>Web Technologies
+                                <ul style="padding-left: 20px; list-style-type: circle;">
+                                    <li>Frontend (HTML/CSS)</li>
+                                    <li>Backend (Node.js)</li>
+                                </ul>
+                            </li>
+                            <li>Mobile Apps</li>
+                        </ul>
+                        <ol type="A" style="padding-left: 20px; margin-top: 10px;">
+                            <li>Project Planning</li>
+                            <li>Deployment</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="links-images" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-images"></i>
+                <h2>4. Hypermedia & Anchors</h2>
+            </div>
+            <p>The <code>&lt;a&gt;</code> tag connects the web together. Attributes like <code>target="_blank"</code>
+                control link behavior, while the <code>&lt;img&gt;</code> tag integrates visual assets with mandatory
+                <code>alt</code> text for accessibility.</p>
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;!-- External Navigation --&gt;
+&lt;a href="https://github.com" target="_blank"&gt;GitHub Profile&lt;/a&gt;
+
+&lt;!-- Image with optimization --&gt;
+&lt;figure&gt;
+  &lt;img src="images/workplace.jpg" alt="Tech Banner"&gt;
+  &lt;figcaption&gt;Fig 1: Modern Workplace&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview">
+                        <a href="#" style="color: #3498db; text-decoration: underline;">GitHub Profile
+                            (Example)</a><br><br>
+                        <figure>
+                            <img src="images/workplace.jpg" alt="Tech" height="200" width="230"
+                                style="border: 1px solid #ccc;">
+                            <figcaption style="font-size: 12px; color: #666;">Fig 1: Modern Workplace</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tables" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-columns"></i>
+                <h2>5. Advanced Data Tables</h2>
+            </div>
+            <p>Tables organize complex data into rows (<code>&lt;tr&gt;</code>), headers (<code>&lt;th&gt;</code>), and
+                cells (<code>&lt;td&gt;</code>). Semantic table structures include <code>&lt;thead&gt;</code> and
+                <code>&lt;tbody&gt;</code> for better accessibility.</p>
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Skill&lt;/th&gt;
+      &lt;th&gt;Level&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML5&lt;/td&gt;
+      &lt;td&gt;Expert&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS3&lt;/td&gt;
+      &lt;td&gt;Advanced&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #2c3e50; color: white;">
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Skill</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">HTML5</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Expert</td>
+                                </tr>
+                                <tr style="background: #f9f9f9;">
+                                    <td style="padding: 8px; border: 1px solid #ddd;">CSS3</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Advanced</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="forms" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-keyboard"></i>
+                <h2>6. User Forms & Input Validation</h2>
+            </div>
+            <p>Forms are the primary way to collect user data. Modern HTML5 includes built-in validation attributes like
+                <code>required</code>, <code>placeholder</code>, and specific input <code>types</code> like email and
+                password.</p>
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;form&gt;
+  &lt;label&gt;Email Address:&lt;/label&gt;
+  &lt;input type="email" placeholder="user@example.com" required&gt;
+  
+  &lt;label&gt;Experience:&lt;/label&gt;
+  &lt;select&gt;
+    &lt;option&gt;Beginner&lt;/option&gt;
+    &lt;option&gt;Professional&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview">
+                        <form onsubmit="return false;">
+                            <label style="font-size: 13px; font-weight: bold;">Email Address:</label><br>
+                            <input type="email" placeholder="user@example.com"
+                                style="width: 100%; padding: 5px; margin-bottom: 10px;"><br>
+                            <label style="font-size: 13px; font-weight: bold;">Experience:</label><br>
+                            <select style="width: 100%; padding: 5px; margin-bottom: 10px;">
+                                <option>Beginner</option>
+                                <option>Professional</option>
+                            </select>
+                            <button
+                                style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 4px;">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="semantic" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-project-diagram"></i>
+                <h2>7. Semantic Layout Elements</h2>
+            </div>
+            <p>Semantic HTML5 elements like <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and
+                <code>&lt;article&gt;</code> describe their purpose to the browser and search engines, replacing generic
+                <code>&lt;div&gt;</code> tags.</p>
+
+
+
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;nav&gt;Site Navigation&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;article&gt;Blog Content&lt;/article&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;Related Links&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Site Info&lt;/footer&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview" style="text-align: center; font-size: 11px;">
+                        <div style="background: #eee; padding: 5px; border: 1px solid #ccc;">NAV</div>
+                        <div style="display: flex; gap: 5px; margin: 5px 0;">
+                            <div
+                                style="flex: 2; background: #fff; border: 1px solid #ccc; height: 50px; padding: 10px;">
+                                MAIN CONTENT</div>
+                            <div
+                                style="flex: 1; background: #f4f4f4; border: 1px solid #ccc; height: 50px; padding: 10px;">
+                                ASIDE</div>
+                        </div>
+                        <div style="background: #eee; padding: 5px; border: 1px solid #ccc;">FOOTER</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="entities" class="concept-section">
+            <div class="concept-header">
+                <i class="fas fa-code"></i>
+                <h2>8. Character Entities & Symbols</h2>
+            </div>
+            <p>Reserved characters in HTML (like angle brackets) must be replaced with entities. They are also used to
+                display symbols and emojis that are not present on a standard keyboard.</p>
+            <div class="code-output-grid">
+                <div class="code-box">
+                    <pre><code>&lt;p&gt;Equation: A &amp;lt; B &amp;amp; C &amp;gt; D&lt;/p&gt;
+&lt;p&gt;Copyright: &amp;copy; 2025 WebDev&lt;/p&gt;
+&lt;p&gt;Currency: &amp;euro; &amp;pound; &amp;yen;&lt;/p&gt;
+&lt;p&gt;Emoji: &amp;#128640; (Rocket)&lt;/p&gt;</code></pre>
+                </div>
+                <div class="output-box">
+                    <div class="preview">
+                        <p>Equation: A &lt; B &amp; C &gt; D</p>
+                        <p>Copyright: &copy; 2025 WebDev</p>
+                        <p>Currency: &euro; &pound; &yen;</p>
+                        <p>Emoji: &#128640;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3><i class="fas fa-code"></i> WebDev Academy</h3>
+                <p>Providing high-quality coding education since 2025. Empowering developers to build the future.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Sitemap</h3>
+                <ul>
+                    <li><a href="..//index.html">Home</a></li>
+                    <li><a href="html-concepts.html">HTML Guide</a></li>
+                    <li><a href="../CSS/css-concepts.html">CSS Guide</a></li>
+                    <li><a href="..//contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WebDev Mastery | Final Web Assignment</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

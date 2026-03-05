@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Mastery | All Concepts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="..//style/style.css"> 
+</head>
+<body>
+
+    <header>
+         <nav class="navbar">
+            <div class="logo"><i class="fas fa-laptop-code"></i> Web<span>Mastery</span></div>
+            <ul class="nav-links">
+                <li><a href="..//index.html">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="..//HTML/html-concepts.html">HTML5 <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="..//HTML/html-concepts.html#structure">Document Structure</a></li>
+                        <li><a href="..//HTML/html-concepts.html#text-formatting">Text Formatting</a></li>
+                        <li><a href="..//HTML/html-concepts.html#lists">Lists (Ordered/Unordered)</a></li>
+                        <li><a href="..//HTML/html-concepts.html#links-images">Links & Media</a></li>
+                        <li><a href="..//HTML/html-concepts.html#tables">Data Tables</a></li>
+                        <li><a href="..//HTML/html-concepts.html#forms">Forms & Validations</a></li>
+                        <li><a href="..//HTML/html-concepts.html#semantic">Semantic Elements</a></li>
+                        <li><a href="..//HTML/html-concepts.html#entities">HTML Entities & Symbols</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="css-concepts.html">CSS3 <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#selectors">Selectors & Specificity</a></li>
+                        <li><a href="#colors">Colors & Backgrounds</a></li>
+                        <li><a href="#box-model">The Box Model</a></li>
+                        <li><a href="#typography">Web Typography</a></li>
+                        <li><a href="#flexbox">Flexbox Layout</a></li>
+                        <li><a href="#grid">CSS Grid System</a></li>
+                        <li><a href="#animations">Transitions & Keyframes</a></li>
+                        <li><a href="#responsive">Media Queries</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="..//contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+    <h1 class="page-title">High-Level CSS3 Architecture & Engineering</h1>
+    <p class="page-desc">An exhaustive deep-dive into the mechanics of web styling, from the CSS Object Model (CSSOM) to advanced 2D/3D layout engines.</p>
+
+    <section id="selectors" class="concept-section">
+        <div class="concept-header">
+            <i class="fas fa-mouse-pointer"></i>
+            <h2>1. Advanced Selectors & Specificity Hierarchy</h2>
+        </div>
+        <p>CSS Selectors are the bridge between structure and presentation. Beyond basic tags, modern CSS utilizes <strong>Attribute Selectors</strong> to target elements based on their state (e.g., <code>[disabled]</code>) or metadata. Understanding the <strong>Cascade</strong> is vital: it is the algorithm that handles conflicts when multiple rules apply. Specificity is calculated based on a four-part weight system: Inline styles (1,0,0,0), IDs (0,1,0,0), Classes/Attributes (0,0,1,0), and Elements (0,0,0,1).</p>
+        
+        <p>We also utilize <strong>Pseudo-classes</strong> to style elements based on user interaction (<code>:hover</code>, <code>:focus-within</code>) or structural position (<code>:nth-of-type</code>). Furthermore, <strong>Pseudo-elements</strong> like <code>::before</code> and <code>::after</code> allow developers to inject decorative content directly through CSS, keeping the HTML semantic and clean from non-functional elements.</p>
+        
+        <div class="code-output-grid">
+            <div class="code-box">
+                <h4>Technical Implementation</h4>
+                <pre><code>/* Target links starting with https */
+a[href^="https"]::after {
+    content: " 🔒";
+    font-size: 0.8rem;
+}
+
+/* Parent styling based on child focus */
+.form-group:focus-within {
+    border-color: #5a67d8;
+    box-shadow: 0 0 10px rgba(90,103,216,0.3);
+}
+
+/* Advanced selection logic */
+.item:not(:last-child) {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}</code></pre>
+            </div>
+            <div class="output-box">
+                <h4>Interactive Execution</h4>
+                <div class="preview">
+                    <a href="https://example.com" class="preview-secure-link">Visit Secure Portal</a>
+                    <div class="form-group-demo">
+                        <input type="text" placeholder="Focus to highlight group...">
+                    </div>
+                    <div class="item-list-demo">
+                        <div class="item">Component Alpha</div>
+                        <div class="item">Component Beta</div>
+                        <div class="item">Component Gamma (Last)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="colors" class="concept-section">
+    <div class="concept-header">
+        <i class="fas fa-palette"></i>
+        <h2>2. Colors & Background Architecture</h2>
+    </div>
+    <p>Color theory in CSS has evolved from simple hex codes into a complex system of color spaces and functional notations. Modern CSS utilizes <strong>HSL (Hue, Saturation, Lightness)</strong> and <strong>HWB (Hue, Whiteness, Blackness)</strong> models, which provide a more human-readable way to manipulate colors dynamically. These models allow developers to create cohesive color palettes and "tints/shades" of a base brand color by simply adjusting the lightness or saturation values, a technique widely used in design systems to ensure visual consistency.</p>
+    
+    <p>Background engineering has also seen a paradigm shift with the introduction of <strong>CSS Gradients</strong> and <strong>Multiple Background Layers</strong>. By stacking multiple linear or radial gradients, developers can create complex textures and patterns entirely through code, reducing the reliance on heavy image assets. Furthermore, properties like <code>background-blend-mode</code> allow for advanced graphical effects—such as "multiply," "overlay," or "screen"—to be applied directly to background images within the browser. The rise of <strong>Glassmorphism</strong> is another testament to CSS progress, utilizing <code>backdrop-filter: blur()</code> to create semi-transparent, frosted layers that add depth and a premium feel to modern user interfaces.</p>
+
+    <div class="code-output-grid">
+        <div class="code-box">
+            <h4>Technical Implementation</h4>
+            <pre><code>.advanced-surface {
+    /* Using HSL for intuitive color control */
+    background-color: hsl(220, 90%, 56%); 
+    
+    /* Layering a gradient over a texture image */
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('texture.jpg');
+    background-blend-mode: overlay;
+    
+    /* Modern Glassmorphism effect */
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}</code></pre>
+        </div>
+        <div class="output-box">
+            <div class="preview">
+                <div class="glass-demo-box">Surface Architecture</div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="box-model" class="concept-section">
+        <div class="concept-header">
+            <i class="fas fa-box"></i>
+            <h2>3. The CSS Box Model & Layout Calculations</h2>
+        </div>
+        <p>The <strong>Box Model</strong> is the core geometry of the web. Every element is rendered as a rectangular box consisting of the <strong>Content</strong>, <strong>Padding</strong> (internal spacing), <strong>Border</strong> (the edge), and <strong>Margin</strong> (external spacing). A critical architectural decision in modern CSS is the use of <code>box-sizing: border-box;</code>. By default, browsers use <code>content-box</code>, where padding and borders are added to the width, often leading to horizontal scrollbars or broken grids.</p>
+
+        
+
+        <p>Advanced sizing involves understanding <strong>Intrinsic vs. Extrinsic sizing</strong>. Extrinsic sizing is when you set fixed dimensions (e.g., <code>width: 500px</code>), whereas intrinsic sizing (using keywords like <code>min-content</code> or <code>fit-content</code>) allows the box to adapt based on the volume of its internal data. Mastering these ensures that your UI remains robust regardless of the content length.</p>
+        
+        <div class="code-output-grid">
+            <div class="code-box">
+                <pre><code>.geometry-card {
+    width: 100%;
+    max-width: clamp(300px, 50%, 600px);
+    padding: 2rem;
+    border: 10px solid #2d3748;
+    margin: 2rem auto;
+    box-sizing: border-box; /* Sizing standard */
+    background: linear-gradient(135deg, #fff, #f7fafc);
+}</code></pre>
+            </div>
+            <div class="output-box">
+                <div class="preview">
+                    <div class="geometry-card-visual">
+                        Analysis of Sizing Constraints
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="typography" class="concept-section">
+    <div class="concept-header">
+        <i class="fas fa-font"></i>
+        <h2>4. Web Typography & Font Engineering</h2>
+    </div>
+    <p>Typography is the fundamental building block of web communication, often accounting for over 90% of the visual interface. Beyond simple font selection, <strong>Font Engineering</strong> involves managing font-display strategies to prevent "Flash of Unstyled Text" (FOUT) and optimizing performance through <strong>Variable Fonts</strong>. A variable font is a revolutionary technology that packages an entire font family—including every weight, width, and slant—into a single, compact file. This drastically reduces HTTP requests while giving designers infinite flexibility to fine-tune typography for specific use cases.</p>
+    
+    <p>Professional typography also implements <strong>Fluid Typography</strong> using the <code>clamp()</code> function. This technique allows text to scale linearly between a minimum and maximum value based on the viewport width, ensuring perfect readability on both a small smartphone and a large 4K monitor without excessive media queries. Additionally, advanced properties like <code>text-wrap: balance</code> and <code>text-wrap: pretty</code> are now used to prevent "widows" and "orphans" in headlines, ensuring a balanced and editorial-quality text layout across all responsive breakpoints.</p>
+
+    <div class="code-output-grid">
+        <div class="code-box">
+            <h4>Technical Implementation</h4>
+            <pre><code>.fluid-typography {
+    /* min: 1.5rem, preferred: 4vw, max: 3.5rem */
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    
+    /* Modern text balance engine */
+    text-wrap: balance; 
+    
+    /* Fine-grained OpenType control */
+    font-feature-settings: "kern" 1, "liga" 1;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}</code></pre>
+        </div>
+        <div class="output-box">
+            <div class="preview">
+                <h1 class="typo-demo-text">Precision Type</h1>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="flexbox" class="concept-section">
+        <div class="concept-header">
+            <i class="fas fa-layer-group"></i>
+            <h2>5. Flexible Box Layout (1D Distribution System)</h2>
+        </div>
+        <p><strong>Flexbox</strong> (The Flexible Box Module) was designed as a one-dimensional layout model, handling either rows or columns. Its primary strength lies in its ability to alter item dimensions to fill available space or shrink to prevent overflow. Key properties include <code>flex-direction</code> (defining the main axis) and <code>justify-content</code> (distributing space along that axis).</p>
+        
+        
+
+        <p>Professional Flexbox usage involves the <strong>Flex Shorthand</strong> (<code>flex: grow shrink basis</code>). For example, <code>flex: 1 0 200px</code> tells an item to grow to fill space, never shrink below its basis, and start at 200px. This logic is the backbone of modern responsive components like card stacks, media objects, and navigation systems that need to reconfigure themselves based on viewport width.</p>
+        
+        <div class="code-output-grid">
+            <div class="code-box">
+                <pre><code>.flex-orchestrator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.flex-module {
+    flex: 1 1 150px; /* Responsive behavior */
+    min-height: 100px;
+    background: #4a5568;
+    color: white;
+    display: grid;
+    place-items: center;
+}</code></pre>
+            </div>
+            <div class="output-box">
+                <div class="preview">
+                    <div class="flex-orchestrator-demo">
+                        <div class="flex-module-item">Node 01</div>
+                        <div class="flex-module-item">Node 02</div>
+                        <div class="flex-module-item">Node 03</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="grid" class="concept-section">
+        <div class="concept-header">
+            <i class="fas fa-th"></i>
+            <h2>6. Advanced CSS Grid (2D Matrix Orchestration)</h2>
+        </div>
+        <p><strong>CSS Grid Layout</strong> is the most powerful layout system available in CSS. It is a 2D system, meaning it can handle both columns and rows, unlike Flexbox which is largely 1D. It allows for the creation of complex asymmetrical layouts that were previously impossible without hacks or heavy JavaScript. It introduces the <code>fr</code> unit, representing a fraction of the free space in the grid container.</p>
+
+        
+
+        <p>Grid also provides unique capabilities like <strong>Implicit vs. Explicit Grids</strong>. You can define a specific number of rows/columns (explicit), or let the browser generate them automatically as content is added (implicit). Using <code>grid-template-areas</code>, you can create a visual map of your layout directly in the CSS, making the code highly readable and maintainable for large-scale application shells.</p>
+        
+        <div class="code-output-grid">
+            <div class="code-box">
+                <pre><code>.app-shell {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "nav header"
+        "nav main"
+        "nav footer";
+    height: 300px;
+}
+.sidebar { grid-area: nav; background: #2d3748; }
+.header { grid-area: header; background: #edf2f7; }</code></pre>
+            </div>
+            <div class="output-box">
+                <h4>Mockup Preview</h4>
+                <div class="preview">
+                    <div class="grid-app-demo">
+                        <div class="grid-nav">Sidebar</div>
+                        <div class="grid-header">Header</div>
+                        <div class="grid-main">Main Content Area</div>
+                        <div class="grid-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="animations" class="concept-section">
+        <div class="concept-header">
+            <i class="fas fa-running"></i>
+            <h2>7. Motion Design: Transitions & Performance</h2>
+        </div>
+        <p>Motion in CSS is not just about aesthetics; it is about <strong>UX Feedback</strong>. <strong>Transitions</strong> provide a bridge between two states, allowing the user to understand that an action has occurred. <strong>Transforms</strong> (Rotate, Scale, Translate, Skew) are unique because they happen on the <strong>Compositor Thread</strong> of the browser, meaning they don't trigger "Reflow" or "Repaint," making them incredibly smooth even on mobile devices.</p>
+        
+        <p>For complex logic, <strong>@Keyframes</strong> allow for multi-state animations. By using properties like <code>animation-fill-mode: forwards</code>, you can ensure that an element stays in its final state after the animation ends. Combining motion with <code>will-change</code> hints allows the browser to pre-optimize the rendering path, ensuring 60 frames per second (FPS) performance.</p>
+        
+        <div class="code-output-grid">
+            <div class="code-box">
+                <pre><code>@keyframes complex-entrance {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.entrance-card {
+    animation: complex-entrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    transition: box-shadow 0.3s ease;
+}
+
+.entrance-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}</code></pre>
+            </div>
+            <div class="output-box">
+                <div class="preview">
+                    <div class="animation-stage">
+                        <div class="entrance-card-demo">Interactive Card</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="responsive" class="concept-section">
+    <div class="concept-header">
+        <i class="fas fa-mobile-alt"></i>
+        <h2>8. Media Queries & Responsive Strategy</h2>
+    </div>
+    <p><strong>Responsive Web Design (RWD)</strong> is no longer just about making things smaller; it is about providing a tailored experience for every device context. <strong>Media Queries</strong> act as the conditional engine of CSS, allowing the browser to apply specific blocks of code based on the device's characteristics, such as screen width, pixel density (Retina displays), or orientation. A <strong>Mobile-First</strong> methodology is the industry gold standard, where developers write the core styles for the smallest screens first and then progressively enhance the layout using <code>min-width</code> breakpoints for larger viewports.</p>
+    
+    <p>The next frontier of responsiveness includes <strong>Container Queries</strong> (<code>@container</code>), which allow an element to change its style based on the size of its parent container rather than the entire viewport. This enables truly modular components that can be placed anywhere in a layout and adapt themselves automatically. Furthermore, CSS now supports <strong>User Preference Queries</strong>, such as <code>prefers-color-scheme</code> for Dark Mode support and <code>prefers-reduced-motion</code> to respect users who have motion sensitivities, ensuring that the web remains accessible, performant, and user-centric on all platforms.</p>
+
+    <div class="code-output-grid">
+        <div class="code-box">
+            <h4>Technical Implementation</h4>
+            <pre><code>/* Global Base (Mobile-First) */
+.layout-stack { display: flex; flex-direction: column; }
+
+/* Progressive Enhancement for Desktop */
+@media screen and (min-width: 1024px) {
+    .layout-stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+/* User Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+    :root { --bg-color: #121212; --text-color: #f5f5f5; }
+}</code></pre>
+        </div>
+        <div class="output-box">
+            <div class="preview">
+                <div class="media-demo-container">Responsive Architecture</div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="master-table" class="concept-section">
+        <div class="concept-header">
+            <i class="fas fa-list-ol"></i>
+            <h2>6. CSS Master Reference Table (100 Essential Properties)</h2>
+        </div>
+        <p>This comprehensive technical reference covers 100 essential CSS properties, providing a complete dictionary for modern web styling and architecture.</p>
+        
+        <div class="table-scroll-wrapper">
+            <table class="css-reference-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Property</th>
+                        <th>Technical Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="10" class="category-tag">Box Model</td><td class="prop-name">width</td><td>Sets the horizontal width of an element.</td></tr>
+                    <tr><td class="prop-name">height</td><td>Sets the vertical height of an element.</td></tr>
+                    <tr><td class="prop-name">padding</td><td>Internal spacing between content and border.</td></tr>
+                    <tr><td class="prop-name">margin</td><td>External spacing outside the border.</td></tr>
+                    <tr><td class="prop-name">border</td><td>Shorthand for border-width, style, and color.</td></tr>
+                    <tr><td class="prop-name">border-radius</td><td>Defines the roundness of corners.</td></tr>
+                    <tr><td class="prop-name">box-sizing</td><td>Defines how total size is calculated (border-box).</td></tr>
+                    <tr><td class="prop-name">overflow</td><td>Handles content that exceeds container size.</td></tr>
+                    <tr><td class="prop-name">aspect-ratio</td><td>Maintains proportional dimensions (e.g., 1/1).</td></tr>
+                    <tr><td class="prop-name">max-width</td><td>Sets the maximum width of an element.</td></tr>
+
+                    <tr><td rowspan="15" class="category-tag">Layout</td><td class="prop-name">display</td><td>Sets the rendering box type (flex, grid, block).</td></tr>
+                    <tr><td class="prop-name">position</td><td>Sets placement logic (absolute, sticky, etc.).</td></tr>
+                    <tr><td class="prop-name">z-index</td><td>Controls stacking order on the Z-axis.</td></tr>
+                    <tr><td class="prop-name">top / bottom</td><td>Vertical offset for positioned elements.</td></tr>
+                    <tr><td class="prop-name">left / right</td><td>Horizontal offset for positioned elements.</td></tr>
+                    <tr><td class="prop-name">float</td><td>Shifts element to left or right side.</td></tr>
+                    <tr><td class="prop-name">clear</td><td>Prevents elements from floating next to it.</td></tr>
+                    <tr><td class="prop-name">visibility</td><td>Hides element but keeps its space.</td></tr>
+                    <tr><td class="prop-name">flex-direction</td><td>Sets main axis for flex items.</td></tr>
+                    <tr><td class="prop-name">justify-content</td><td>Aligns items along main axis.</td></tr>
+                    <tr><td class="prop-name">align-items</td><td>Aligns items along cross axis.</td></tr>
+                    <tr><td class="prop-name">flex-wrap</td><td>Allows flex items to wrap to new lines.</td></tr>
+                    <tr><td class="prop-name">gap</td><td>Sets spacing between flex/grid items.</td></tr>
+                    <tr><td class="prop-name">grid-template-areas</td><td>Creates a named visual grid map.</td></tr>
+                    <tr><td class="prop-name">place-items</td><td>Shorthand for align-items and justify-items.</td></tr>
+
+                    <tr><td rowspan="15" class="category-tag">Typography</td><td class="prop-name">font-family</td><td>Specifies the font typeface.</td></tr>
+                    <tr><td class="prop-name">font-size</td><td>Adjusts the scale of text.</td></tr>
+                    <tr><td class="prop-name">font-weight</td><td>Sets thickness of characters (bold, etc.).</td></tr>
+                    <tr><td class="prop-name">line-height</td><td>Sets vertical space between lines.</td></tr>
+                    <tr><td class="prop-name">text-align</td><td>Sets horizontal alignment.</td></tr>
+                    <tr><td class="prop-name">text-decoration</td><td>Adds underline, overline, or strike.</td></tr>
+                    <tr><td class="prop-name">text-transform</td><td>Adjusts casing (uppercase, lowercase).</td></tr>
+                    <tr><td class="prop-name">letter-spacing</td><td>Adjusts space between letters.</td></tr>
+                    <tr><td class="prop-name">word-spacing</td><td>Adjusts space between words.</td></tr>
+                    <tr><td class="prop-name">font-style</td><td>Sets text to italic or oblique.</td></tr>
+                    <tr><td class="prop-name">text-shadow</td><td>Adds shadow effect to text.</td></tr>
+                    <tr><td class="prop-name">white-space</td><td>Handles wrapping and line breaks.</td></tr>
+                    <tr><td class="prop-name">direction</td><td>Sets text direction (ltr or rtl).</td></tr>
+                    <tr><td class="prop-name">vertical-align</td><td>Sets vertical alignment of inline elements.</td></tr>
+                    <tr><td class="prop-name">font-variant</td><td>Sets text to small-caps.</td></tr>
+
+                    <tr><td rowspan="15" class="category-tag">Visuals</td><td class="prop-name">color</td><td>Sets foreground text color.</td></tr>
+                    <tr><td class="prop-name">background-color</td><td>Sets element's fill color.</td></tr>
+                    <tr><td class="prop-name">background-image</td><td>Applies an image to the background.</td></tr>
+                    <tr><td class="prop-name">background-size</td><td>Scales background (cover, contain).</td></tr>
+                    <tr><td class="prop-name">background-repeat</td><td>Sets if background image repeats.</td></tr>
+                    <tr><td class="prop-name">background-position</td><td>Sets starting position of background.</td></tr>
+                    <tr><td class="prop-name">opacity</td><td>Sets transparency level (0-1).</td></tr>
+                    <tr><td class="prop-name">box-shadow</td><td>Adds depth with frame shadows.</td></tr>
+                    <tr><td class="prop-name">cursor</td><td>Changes mouse icon on hover.</td></tr>
+                    <tr><td class="prop-name">border-color</td><td>Sets color of all four borders.</td></tr>
+                    <tr><td class="prop-name">border-style</td><td>Sets border type (dashed, solid, etc.).</td></tr>
+                    <tr><td class="prop-name">outline</td><td>Draws a line outside the border edge.</td></tr>
+                    <tr><td class="prop-name">list-style-type</td><td>Sets marker type for lists (circle, square).</td></tr>
+                    <tr><td class="prop-name">accent-color</td><td>Sets theme color for form inputs.</td></tr>
+                    <tr><td class="prop-name">background-attachment</td><td>Sets if background scrolls with page.</td></tr>
+
+                    <tr><td rowspan="15" class="category-tag">Animation</td><td class="prop-name">transition</td><td>Shorthand for property animation.</td></tr>
+                    <tr><td class="prop-name">transition-duration</td><td>Time taken for transition.</td></tr>
+                    <tr><td class="prop-name">transition-delay</td><td>Waiting time before transition starts.</td></tr>
+                    <tr><td class="prop-name">transform</td><td>Rotates, scales, or moves elements.</td></tr>
+                    <tr><td class="prop-name">animation-name</td><td>Links to @keyframes rule.</td></tr>
+                    <tr><td class="prop-name">animation-duration</td><td>Time for one animation cycle.</td></tr>
+                    <tr><td class="prop-name">animation-iteration-count</td><td>How many times animation repeats.</td></tr>
+                    <tr><td class="prop-name">animation-direction</td><td>Normal, reverse, or alternate.</td></tr>
+                    <tr><td class="prop-name">animation-timing-function</td><td>Sets speed curve (linear, ease-in).</td></tr>
+                    <tr><td class="prop-name">animation-fill-mode</td><td>Sets state before/after animation.</td></tr>
+                    <tr><td class="prop-name">filter</td><td>Applies blur, contrast, or grayscale.</td></tr>
+                    <tr><td class="prop-name">backface-visibility</td><td>Hides back side of 3D elements.</td></tr>
+                    <tr><td class="prop-name">perspective</td><td>Adds 3D depth to container.</td></tr>
+                    <tr><td class="prop-name">transform-origin</td><td>Sets center point for transforms.</td></tr>
+                    <tr><td class="prop-name">will-change</td><td>Optimizes browser rendering.</td></tr>
+
+                    <tr><td rowspan="15" class="category-tag">UI/Forms</td><td class="prop-name">pointer-events</td><td>Enables/disables click interaction.</td></tr>
+                    <tr><td class="prop-name">user-select</td><td>Allows/prevents text highlighting.</td></tr>
+                    <tr><td class="prop-name">caret-color</td><td>Sets color of text cursor.</td></tr>
+                    <tr><td class="prop-name">resize</td><td>Allows user to drag-resize element.</td></tr>
+                    <tr><td class="prop-name">appearance</td><td>Hides default browser styling.</td></tr>
+                    <tr><td class="prop-name">scroll-behavior</td><td>Enables smooth page scrolling.</td></tr>
+                    <tr><td class="prop-name">outline-offset</td><td>Space between outline and border.</td></tr>
+                    <tr><td class="prop-name">scrollbar-width</td><td>Sets width of scrollbar (Firefox).</td></tr>
+                    <tr><td class="prop-name">touch-action</td><td>Sets how touch gestures behave.</td></tr>
+                    <tr><td class="prop-name">content</td><td>Used in pseudo-elements for data.</td></tr>
+                    <tr><td class="prop-name">quotes</td><td>Sets type of quotation marks.</td></tr>
+                    <tr><td class="prop-name">counter-reset</td><td>Creates/resets a CSS counter.</td></tr>
+                    <tr><td class="prop-name">counter-increment</td><td>Increases value of CSS counter.</td></tr>
+                    <tr><td class="prop-name">table-layout</td><td>Sets algorithm for table cell widths.</td></tr>
+                    <tr><td class="prop-name">empty-cells</td><td>Shows/hides borders on empty cells.</td></tr>
+
+                    <tr><td rowspan="15" class="category-tag">Advanced</td><td class="prop-name">object-fit</td><td>Fits images into container aspect.</td></tr>
+                    <tr><td class="prop-name">object-position</td><td>Aligns image inside object-fit.</td></tr>
+                    <tr><td class="prop-name">clip-path</td><td>Crops element into custom shapes.</td></tr>
+                    <tr><td class="prop-name">mask-image</td><td>Uses image to mask element parts.</td></tr>
+                    <tr><td class="prop-name">mix-blend-mode</td><td>Blends element with parent colors.</td></tr>
+                    <tr><td class="prop-name">backdrop-filter</td><td>Blurs area behind the element.</td></tr>
+                    <tr><td class="prop-name">scroll-snap-type</td><td>Sets snapping points for scroll.</td></tr>
+                    <tr><td class="prop-name">writing-mode</td><td>Sets horizontal or vertical text.</td></tr>
+                    <tr><td class="prop-name">column-count</td><td>Splits text into multiple columns.</td></tr>
+                    <tr><td class="prop-name">column-gap</td><td>Sets spacing between text columns.</td></tr>
+                    <tr><td class="prop-name">hyphens</td><td>Sets hyphenation for long words.</td></tr>
+                    <tr><td class="prop-name">isolation</td><td>Creates new stacking context.</td></tr>
+                    <tr><td class="prop-name">unicode-bidi</td><td>Handles complex text directions.</td></tr>
+                    <tr><td class="prop-name">image-rendering</td><td>Sets image scaling quality.</td></tr>
+                    <tr><td class="prop-name">all</td><td>Resets all properties to default.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3><i class="fas fa-code"></i> WebDev Academy</h3>
+                <p>Providing high-quality coding education since 2025. Empowering developers to build the future.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Sitemap</h3>
+                <ul>
+                    <li><a href="..//index.html">Home</a></li>
+                    <li><a href="..//HTML/html-concepts.html">HTML Guide</a></li>
+                    <li><a href="css-concepts.html">CSS Guide</a></li>
+                    <li><a href="..//contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WebDev Mastery | Final Web Assignment</p>
+        </div>
+    </footer>
+</body>
+</html>

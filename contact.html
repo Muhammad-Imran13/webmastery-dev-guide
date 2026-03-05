@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Pro | Comprehensive Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><i class="fas fa-laptop-code"></i> Web<span>Mastery</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="HTML/html-concepts.html">HTML5 <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="HTML/html-concepts.html#structure">Document Structure</a></li>
+                        <li><a href="HTML/html-concepts.html#text-formatting">Text Formatting</a></li>
+                        <li><a href="HTML/html-concepts.html#lists">Lists (Ordered/Unordered)</a></li>
+                        <li><a href="HTML/html-concepts.html#links-images">Links & Media</a></li>
+                        <li><a href="HTML/html-concepts.html#tables">Data Tables</a></li>
+                        <li><a href="HTML/html-concepts.html#forms">Forms & Validations</a></li>
+                        <li><a href="HTML/html-concepts.html#semantic">Semantic Elements</a></li>
+                        <li><a href="HTML/html-concepts.html#entities">HTML Entities & Symbols</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="CSS/css-concepts.html">CSS3 <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="CSS/css-concepts.html#selectors">Selectors & Specificity</a></li>
+                        <li><a href="CSS/css-concepts.html#colors">Colors & Backgrounds</a></li>
+                        <li><a href="CSS/css-concepts.html#box-model">The Box Model</a></li>
+                        <li><a href="CSS/css-concepts.html#typography">Web Typography</a></li>
+                        <li><a href="CSS/css-concepts.html#flexbox">Flexbox Layout</a></li>
+                        <li><a href="CSS/css-concepts.html#grid">CSS Grid System</a></li>
+                        <li><a href="CSS/css-concepts.html#animations">Transitions & Keyframes</a></li>
+                        <li><a href="CSS/css-concepts.html#responsive">Media Queries</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="cnt-main-wrapper">
+    <div class="cnt-header-block">
+        <h1 class="cnt-main-heading">Get In Touch With Experts</h1>
+        <p class="cnt-sub-text">Have a technical inquiry or looking to collaborate on a high-scale project? TechHub Pakistan's consultancy wing is ready to provide bespoke architectural solutions tailored to your enterprise needs. Our team in Karachi ensures seamless integration and 24/7 technical oversight for all our partners.</p>
+    </div>
+
+    <div class="cnt-cards-grid">
+        <div class="cnt-info-card">
+            <i class="fas fa-envelope-open-text"></i>
+            <h3>Official Inquiries</h3>
+            <p>For corporate proposals and partnership opportunities, reach out to our communications desk.</p>
+            <span class="cnt-detail-link">info@techhub.pk</span>
+        </div>
+        <div class="cnt-info-card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Direct Hotline</h3>
+            <p>Immediate technical assistance for live deployments and server-side emergencies.</p>
+            <span class="cnt-detail-link">+92 (300) 123-4567</span>
+        </div>
+        <div class="cnt-info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Karachi HQ</h3>
+            <p>Sector 4, Manzoor Colony, Jamshed Town, Karachi, Pakistan. ZIP: 75460.</p>
+            <span class="cnt-detail-link">Mon - Sat: 9am - 6pm</span>
+        </div>
+    </div>
+
+    <div class="cnt-content-layout">
+        <div class="cnt-form-container">
+            <h2 class="cnt-section-title">Send Us a Message</h2>
+            <p class="cnt-form-instruction">Please fill out the detailed project brief below, and our senior architects will analyze your request within 24 business hours.</p>
+            
+            <form id="cnt-project-form">
+                <div class="cnt-input-row">
+                    <div class="cnt-field">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="e.g. Ali Ahmed" required>
+                    </div>
+                    <div class="cnt-field">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="ali@example.com" required>
+                    </div>
+                </div>
+                
+                <div class="cnt-input-row">
+                    <div class="cnt-field">
+                        <label>Contact Number</label>
+                        <input type="tel" placeholder="+92 3xx xxxxxxx" required>
+                    </div>
+                    <div class="cnt-field">
+                        <label>Department</label>
+                        <select required>
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="web">Web Architecture</option>
+                            <option value="cloud">Cloud Computing</option>
+                            <option value="security">Cyber Security</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cnt-field">
+                    <label>Project Details</label>
+                    <textarea rows="5" placeholder="Describe your requirements in detail..." required></textarea>
+                </div>
+
+                <button type="submit" class="cnt-submit-btn">
+                    <span>Dispatch Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="cnt-visual-side">
+            <div class="cnt-map-box">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.217351603525!2d67.07025817544322!3d24.856447845427976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ea397395029%3A0x64201387d84f4e70!2sManzoor%20Colony%2C%20Karachi!5e0!3m2!1sen!2spk!4v1700000000000" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="cnt-follow-box">
+                <h3>Join Our Network</h3>
+                <div class="cnt-social-links">
+                    <a href="#" class="cnt-soc-item linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" class="cnt-soc-item github"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" class="cnt-soc-item twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3><i class="fas fa-code"></i> WebDev Academy</h3>
+                <p>Providing high-quality coding education since 2025. Empowering developers to build the future.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Sitemap</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="HTML/html-concepts.html">HTML Guide</a></li>
+                    <li><a href="CSS/css-concepts.html">CSS Guide</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WebDev Mastery | Final Web Assignment</p>
+        </div>
+    </footer>
+</body>
+</html>
